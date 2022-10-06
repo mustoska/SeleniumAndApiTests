@@ -1,0 +1,11 @@
+# Abnormalities found
+
+###Error while installing to Win10 x64 based PC:
+"ImportError: cannot import name 'Markup' from 'jinja2'2"
+
+Solution:
+pip uninstall  Flask Jinja2
+pip install Flask Jinja2
+
+###
+
