@@ -1,11 +1,19 @@
 # Abnormalities found
 
 ###Error while installing to Win10 x64 based PC:
-"ImportError: cannot import name 'Markup' from 'jinja2'2"
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/bin/flask", line 7, in <module>
+    from flask.cli import main
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/__init__.py", line 19, in <module>
+    from jinja2 import Markup, escape
+ImportError: cannot import name 'Markup' from 'jinja2' (/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/__init__.py)
 
 Solution:
 pip uninstall  Flask Jinja2
 pip install Flask Jinja2
+
+Suggested update to requirements.txt 
+Flask==2.2.2
 
 ###
 
