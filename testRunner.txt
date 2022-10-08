@@ -2,7 +2,7 @@
 
 #Defines options
 --loglevel DEBUG
---outputdir TestsResults
+--outputdir tests_results
 --xunit xunit_log.xml
 --name loginTest
 
