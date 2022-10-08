@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.2 on darwin)" generated="20221008 09:32:44.531" rpa="false" schemaversion="3">
+<suite id="s1" name="NewTests" source="/Users/leluapina/Desktop/Develop/SignantHealth/Signant/test_suites/loginTest.robot">
+<test id="s1-t1" name="Open Login" line="13">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${loginpage}</arg>
+<arg>${browser}</arg>
+<arg>alias=browserWind</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221008 09:32:45.049" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8080'.</msg>
+<msg timestamp="20221008 09:32:45.064" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20221008 09:32:45.066" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<msg timestamp="20221008 09:32:45.093" level="DEBUG">Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 71, in start
+    self.process = subprocess.Popen(cmd, env=self.env,
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/subprocess.py", line 854, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/subprocess.py", line 1702, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'chromedriver'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/__init__.py", line 496, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/robotlibcore.py", line 94, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/keywords/browsermanagement.py", line 293, in open_browser
+    return self._make_new_browser(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/keywords/browsermanagement.py", line 324, in _make_new_browser
+    driver = self._make_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/keywords/browsermanagement.py", line 716, in _make_driver
+    driver = self._webdriver_creator.create_driver(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/keywords/webdrivertools/webdrivertools.py", line 91, in create_driver
+    return creation_method(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/SeleniumLibrary/keywords/webdrivertools/webdrivertools.py", line 148, in create_chrome
+    return webdriver.Chrome(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/chrome/webdriver.py", line 69, in __init__
+    super().__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/chromium/webdriver.py", line 89, in __init__
+    self.service.start()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/selenium/webdriver/common/service.py", line 81, in start
+    raise WebDriverException(
+selenium.common.exceptions.WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home</msg>
+<status status="FAIL" starttime="20221008 09:32:45.048" endtime="20221008 09:32:45.093"/>
+</kw>
+<status status="FAIL" starttime="20221008 09:32:45.046" endtime="20221008 09:32:45.095">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<doc>Simple Login Test robot for Signant Health</doc>
+<status status="FAIL" starttime="20221008 09:32:44.534" endtime="20221008 09:32:45.097"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="NewTests">NewTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

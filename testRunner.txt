@@ -1,0 +1,10 @@
+#Run this file with command: "robot -A testRunner.txt"
+
+#Defines options
+--loglevel DEBUG
+--outputdir TestsResults
+--xunit xunit_log.xml
+--name NewTests
+
+#IN USE ROBOTS
+test_suites/loginTest.robot

@@ -11,7 +11,7 @@ ${browser}        chrome
 
 *** Test Cases ***
 Open Login
-    Open Browser    ${loginpage}    ${browser}
+    Open Browser    ${loginpage}    ${browser}    alias=browserWind
 
 
 *** Keywords ***
