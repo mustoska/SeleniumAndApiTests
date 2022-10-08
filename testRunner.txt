@@ -4,7 +4,7 @@
 --loglevel DEBUG
 --outputdir TestsResults
 --xunit xunit_log.xml
---name NewTests
+--name loginTest
 
 #IN USE ROBOTS
 test_suites/loginTest.robot

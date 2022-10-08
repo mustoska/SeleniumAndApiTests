@@ -1,3 +1,8 @@
+#dependencies:
+#  - python=3.7.0
+#  - pip=22.2.2
+
+#requirements:
 robotframework==5.0.1
 robotframework-seleniumlibrary==6.0.0 
 robotframework-robocop==2.0.2
