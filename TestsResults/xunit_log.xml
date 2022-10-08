@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NewTests" tests="1" errors="0" failures="1" skipped="0" time="0.563" timestamp="2022-10-08T09:32:44.534000">
-<testcase classname="NewTests" name="Open Login" time="0.049">
-<failure message="WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home&#10;" type="AssertionError"/>
-</testcase>
-<properties>
-<property name="Documentation" value="Simple Login Test robot for Signant Health"/>
-</properties>
-</testsuite>
