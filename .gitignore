@@ -1,5 +1,5 @@
-**/test_results/*
-tests_results/log.html
-tests_results/output.xml
-tests_results/report.html
-tests_results/xunit_log.xml
+#Exclude to local test results
+tests_results/*.html
+tests_results/*.xml
+tests_results/*.png
+

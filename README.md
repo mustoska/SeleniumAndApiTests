@@ -1,6 +1,7 @@
 # Signant #
 
-Simple login tests for SignantHealth
+Simple login tests for SignantHealth demo web app.
+https://github.com/sh-rdtaci/Flasky
 
 # Dependencies:
 python=3.7.0

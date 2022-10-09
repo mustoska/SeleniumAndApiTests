@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Simple Login Test robot for Signant Health
-
+Resource    ../custom_keywords/ui_robot_keywords.robot
 Library    SeleniumLibrary
 
 Suite Setup    Open Browser    ${loginpage}    ${browser}    alias=browserWind
@@ -16,41 +16,18 @@ User Moves From Index Page To Login Page
     When Open Login
     Then Login Is Shown
 
-User From Login page To Register Page
-    When Open Register Page
-    Then All Register Page Labels Are Shown
+As A UI User I Can Register Through Web Portal
+    Given Open Register Page
+    And All Register Page Labels Are Shown
+    When On Register Page User Registers    Bruce1939    IAmBatman    Bruce    Wayne    +555 111 345
+    Then Login Is Shown 
 
-
-*** Keywords ***
-Index Page Is Opened
-    Sleep     2
-    Title Should Be    index page - Demo App
-
-Open Login
-    [Documentation]    Use href to open link.
-    Click Link    Log In
-
-Login Is Shown
-    Title Should Be   Log In - Demo App
-
-Open Register Page
-    [Documentation]    Use href to open link.
-    Click Link    Register
-
-All Register Page Labels Are Shown
-    #${labels} =    Get Selected List Labels   method=post
-    #Element Should Be Visible    label=username
-    Element Should Be Visible    id=username
-    #Element Should Be Visible    label=password
-    Element Should Be Visible    id=password
-    #Element Should Be Visible    label=firstname
-    Element Should Be Visible    id=firstname
-    #Element Should Be Visible    label=lastname
-    Element Should Be Visible    id=lastname
-    #Element Should Be Visible    label=phone
-    Element Should Be Visible    id=phone
+#As A User I Can Review My Own User Information From The Main View
+#    Pass Exceution
 
 *** Comments ***
+Add to suite teardown to flush database
+
 As a UI user I can:
 
     Register through web portal
