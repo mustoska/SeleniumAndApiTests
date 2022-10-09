@@ -10,7 +10,7 @@ Open Login
     [Documentation]    Use href to open link.
     Click Link    Log In
 
-Login Is Shown
+Login Page Is Shown
     Title Should Be   Log In - Demo App
 
 Open Register Page
