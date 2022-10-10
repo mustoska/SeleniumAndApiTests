@@ -8,3 +8,4 @@
 
 #IN USE ROBOTS
 test_suites/loginTest.robot
+test_suites/APITests.robot

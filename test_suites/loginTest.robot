@@ -6,12 +6,6 @@ Documentation    Simple Login Test robot for Signant Health
 ...              Register through web portal
 ...              Review my own user information from the main view
 
-...              As an API Consumer I can:
-...              Register new users
-...              Review users registered in system
-...              If authenticated I can get personal information of users
-...              If authenticated I can update personal information of users
-
 Resource    ../custom_keywords/ui_robot_keywords.robot
 Library    SeleniumLibrary
 Suite Setup    LoginTest Suite Setup
