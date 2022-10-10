@@ -1,12 +1,12 @@
 *** Settings ***
-Library    REST
-Library    RequestsLibrary
-
-...              As an API Consumer I can:
+Documentation    ...              As an API Consumer I can:
 ...              Register new users
 ...              Review users registered in system
 ...              If authenticated I can get personal information of users
 ...              If authenticated I can update personal information of users
+
+Library    REST
+Library    RequestsLibrary
 
 *** Variables ***
 ${LOCAL_HOST}      http://localhost:8080
