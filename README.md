@@ -24,6 +24,10 @@ Run using provided testRunner.
 # Chromedriver
 Install chromedriver:
 ```
+Windows:
+https://chromedriver.storage.googleapis.com/index.html?path=106.0.5249.61/
+Make PATH to executable.
+
 MacOS:
 brew install --cask chromedriver
 
