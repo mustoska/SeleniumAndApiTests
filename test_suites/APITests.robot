@@ -19,11 +19,14 @@ ${TEST_USER_2}     { "username":"Wolverine", "password": "IAmHairyBeast", "first
 As an API Consumer I can Register new users
     POST            /api/users        ${TEST_USER_1}
     Integer         response status       201
-    Output  response body        test_results\\APITests.json
+    Output          response body        test_results\\APITests.json
 
 As an API Consumer I can Review users registered in system
-    GET             /api/auth/token        ${TOKEN} 
-    String          response body username    Bruce1939
+    GET             /api/users        ${TOKEN} 
+    Output schema    response body
+    Output schema   response body payload        Bruce1939 
+    Output schema   response body payload        Spiderman   
+    Output schema   response body status    SUCCESS
     Output schema   response body
 
 
