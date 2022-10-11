@@ -4,10 +4,7 @@ Documentation    ...              As an API Consumer I can:
 ...              Review users registered in system
 ...              If authenticated I can get personal information of users
 ...              If authenticated I can update personal information of users
-
-Library    REST
-Library    RequestsLibrary
-
+Library    REST     ${API_ADDRESS1}     ssl_verify=false
 *** Variables ***
 ${LOCAL_HOST}      http://localhost:8080
 ${API_ADDRESS1}    http://127.0.0.1:8080
@@ -19,10 +16,14 @@ ${TEST_USER_2}     { "username":"Wolverine", "password": "IAmHairyBeast", "first
 *** Test Cases ***
 
 
-#As an API Consumer I can Register new users
+As an API Consumer I can Register new users
+    POST            /api/users        ${TEST_USER_1}
+    Integer         response status       201
+    Output schema   response body
 
 As an API Consumer I can Review users registered in system
-    GET    /api/auth/token
+    GET             /api/auth/token        ${TOKEN} 
+    String          response body username    Bruce1939
     Output schema   response body
 
 
