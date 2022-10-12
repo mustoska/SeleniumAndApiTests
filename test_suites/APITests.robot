@@ -6,12 +6,11 @@ Documentation    As an API Consumer I can:
 ...              If authenticated I can update personal information of users
 Library    REST     ${API_ADDRESS1}     ssl_verify=false
 *** Variables ***
-${LOCAL_HOST}      http://localhost:8080
 ${API_ADDRESS1}    http://127.0.0.1:8080
 ${API_ADDRESS2}    http://10.127.242.101:8080  
 
 ${HEADER}          {"Content-Type": "application/json"}
-${TOKEN}           {'Content-Type': 'application/json', 'authorization': 'Basic MzMyNjQyMzAzODMwNjk1Mzg1MDU4OTA3MTEyMDM3MTQ2NDg5Mzg2'}
+${TOKEN}           {"Token": "MzMyNjQyMzAzODMwNjk1Mzg1MDU4OTA3MTEyMDM3MTQ2NDg5Mzg2"}
 
 ${TEST_USER_1}     { "username":"Spiderman", "password": "IAmSpiderman", "firstname": "Peter", "lastname": "Parker", "phone": "+555 111 222"}
 ${TEST_USER_2}     { "username":"Wolverine", "password": "IAmHairyBeast", "firstname": "James", "lastname": "Howlett", "phone": "+555 123 123"}
@@ -21,29 +20,20 @@ ${TEST_USER_2_AUTH}    { "username":"Wolverine", "password": "IAmHairyBeast"}
 
 *** Test Cases ***
 As an API Consumer I can Register new users
-    POST            /api/users        ${TEST_USER_1}
+    POST            /api/users    ${TEST_USER_1}
     Integer         response status       201
     Output          response body        test_results\\APITests.json
 
 As an API Consumer I can Review users registered in system
     [Documentation]    Works without token
+    Set Headers    ${HEADER}
     GET             /api/users
     Integer         response status       200
     Output schema    response body
 
-As an API Consumer I can If authenticated I can get personal information of users
-    GET    /api/auth/token/    ${TOKEN}
-    Integer         response status       200
-    Output schema    response body
+#As an API Consumer I can If authenticated I can get personal information of users
+    #GET      /api/auth/token/Spiderman/IAmSpiderman
+    #Integer         response status       200
+    #Output schema    response body
 
 #As an API Consumer I can If authenticated I can update personal information of users
-
-*** Comments ***
-Cases done:
-/api/users 	POST 	None
-/api/users 	GET 	No token
-
-Cases to test:
-/api/users 	GET 	Token
-/api/auth/token 	GET 	Basic
-/api/users/{username} 	GET, PUT 	Token
